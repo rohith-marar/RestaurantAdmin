@@ -1,0 +1,48 @@
+<div class="container mt-5">
+    <div class="d-flex justify-content-end mb-3">
+        <button class="btn btn-success" (click)="navigateToAddRestaurant()">
+          Add Restaurant
+        </button>
+      </div>
+  <div *ngIf="restaurants.length; else noData">
+    <h1 class="text-center">Restaurant List</h1>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Location</th>
+          <th>Menu available</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let restaurant of restaurants">
+          <td>{{ restaurant.name }}</td>
+          <td>{{ restaurant.description }}</td>
+          <td>{{ restaurant.location }}</td>
+          <td>{{ restaurant.menu }}</td>
+          <td>
+            <button
+              class="btn btn-primary"
+              (click)="editRestaurant(restaurant.id)"
+            >
+              Edit
+            </button>
+            <button
+              class="btn btn-danger"
+              (click)="deleteRestaurant(restaurant.id)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #noData>
+    <div *ngIf="restaurants.length === 0" class="no-restaurants-message">
+        No restaurants available. Please add some restaurants.
+      </div>
+  </ng-template>
+</div>

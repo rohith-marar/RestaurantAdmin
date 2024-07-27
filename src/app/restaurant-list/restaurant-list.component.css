@@ -1,0 +1,20 @@
+.restaurant-list-container {
+    margin: 20px;
+  }
+  
+  .add-restaurant-btn {
+    margin-bottom: 10px;
+  }
+  
+  .no-restaurants-message {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+    margin-top: 20px;
+  }
+
+  .btn-danger{
+   margin-left: 10px;
+  }
+
+  
