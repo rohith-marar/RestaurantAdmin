@@ -4,11 +4,11 @@
 The Restaurant Admin Platform is a simple and responsive web application designed for restaurant administrators to manage their restaurant listings. Built using Angular, this platform allows administrators to add, update, delete, and view restaurants seamlessly. It also incorporates local storage for persisting data, ensuring that changes are saved even after the page is refreshed.
 
 # Features
-Add Restaurant: Administrators can add new restaurants with details such as name, description, and location.
-Edit Restaurant: Allows administrators to update the details of existing restaurants.
-Delete Restaurant: Remove a restaurant from the list with a simple click.
-View Restaurants: Display a list of all restaurants with their details.
-Responsive Design: Ensures the application is user-friendly across various devices and screen sizes.
+# Add Restaurant: Administrators can add new restaurants with details such as name, description, and location.
+# Edit Restaurant: Allows administrators to update the details of existing restaurants.
+# Delete Restaurant: Remove a restaurant from the list with a simple click.
+# View Restaurants: Display a list of all restaurants with their details.
+# Responsive Design: Ensures the application is user-friendly across various devices and screen sizes.
 
 # Technologies Used
 Angular: For building the front-end of the application.
