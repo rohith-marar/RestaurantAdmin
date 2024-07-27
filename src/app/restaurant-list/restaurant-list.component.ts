@@ -8,35 +8,35 @@ import { Restaurant, RestaurantService } from '../service/restaurant.service';
   styleUrls: ['./restaurant-list.component.css']
 })
 export class RestaurantListComponent implements OnInit {
-  restaurants: Restaurant[] = [];
+  public restaurants: Restaurant[] = [];
 
   constructor(private restaurantService: RestaurantService, private router: Router) {}
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.loadRestaurants();
     this.restaurantService.restaurantDeleted.subscribe(() => {
       this.loadRestaurants();
     });
   }
 
-  loadRestaurants(): void {
+  public loadRestaurants(): void {
     this.restaurantService.getRestaurants().subscribe(restaurants => {
       this.restaurants = restaurants;
     });
   }
 
-  editRestaurant(id: number): void {
+  public editRestaurant(id: number): void {
     this.router.navigate(['/edit', id]);
   }
 
-  deleteRestaurant(id: number): void {
+  public deleteRestaurant(id: number): void {
     this.restaurantService.deleteRestaurant(id).subscribe(() => {
       this.restaurants = this.restaurants.filter(r => r.id !== id);
       this.loadRestaurants();
     });
   }
 
-  navigateToAddRestaurant(): void {
+  public navigateToAddRestaurant(): void {
     this.router.navigate(['/add']);
   }
 }

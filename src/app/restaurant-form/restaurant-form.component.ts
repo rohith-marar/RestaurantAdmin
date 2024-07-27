@@ -9,8 +9,8 @@ import { RestaurantService } from '../service/restaurant.service';
   styleUrls: ['./restaurant-form.component.css'],
 })
 export class RestaurantFormComponent implements OnInit {
-  restaurantForm: FormGroup;
-  id: any;
+  public restaurantForm: FormGroup;
+  public id: any;
 
   constructor(
     private fb: FormBuilder,
@@ -54,22 +54,21 @@ export class RestaurantFormComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     const idParam = this.route.snapshot.paramMap.get('id');
-    this.id = idParam ? +idParam : null; // Convert idParam to number using the unary plus operator
+    this.id = idParam ? +idParam : null; 
     console.log(this.id);
-
     if (this.id !== null) {
       this.restaurantService.getRestaurant(this.id).subscribe((restaurant) => {
         console.log(restaurant);
-
         if (restaurant) {
           this.restaurantForm.patchValue(restaurant);
         }
       });
     }
   }
-  onSubmit(): void {
+  
+  public onSubmit(): void {
     if (this.restaurantForm.valid) {
       const restaurantData = this.restaurantForm.value;
       if (this.id) {
